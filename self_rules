@@ -10,5 +10,6 @@
 # PROCESS-NAME:0
 # TOTAL:1
 
+DOMAIN-KEYWORD,glados
 IP-CIDR,185.152.67.145/32,no-resolve
 
