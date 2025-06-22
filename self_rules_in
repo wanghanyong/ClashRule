@@ -1,0 +1,13 @@
+# NAME: self_rules_in
+# AUTHOR: duodu
+# REPO: https://github.com/wanghanyong/ClashRule
+# UPDATED: 2025-06-22
+# DOMAIN: 0
+# DOMAIN-KEYWORD:0
+# DOMAIN-SUFFIX: 1
+# IP-CIDR: 
+# IP-CIDR6: 0
+# PROCESS-NAME:0
+# TOTAL:1
+
+DOMAIN-SUFFIX,qzhph.com
