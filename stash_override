@@ -5,7 +5,7 @@ proxy-groups:
     type: url-test
 
     # 导入所有节点
-    include-all-proxies: true
+    include-all: true
 
     # 自动筛选美国节点
     filter: "(?i)US|America|United States|美国|Los|纽约|硅谷|San Jose|Seattle"
