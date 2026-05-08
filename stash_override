@@ -22,21 +22,6 @@ proxy-groups:
     # 延迟容差
     tolerance: 50
 
-  # =========================
-  # AI 总策略
-  # 美国挂了自动切 Proxy
-  # =========================
-  - name: AI
-    type: fallback
-
-    proxies:
-      - AI-US
-      - Proxy
-      - DIRECT
-
-    url: https://cp.cloudflare.com/generate_204
-    interval: 300
-
 rules:
 
   # =========================
