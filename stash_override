@@ -2,6 +2,7 @@ proxy-groups:
   # Gemini 专用美国节点组
   - name: Gemini-US
     type: select
+    include-all: true
     filter: "(?i)US|America|United States|美国|Los|纽约|硅谷"
 
 rules:
