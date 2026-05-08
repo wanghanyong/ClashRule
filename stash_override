@@ -1,9 +1,6 @@
 proxy-groups:
 
-  # =========================
   # 美国 AI 节点池
-  # 自动测速选最快美国节点
-  # =========================
   - name: AI-US
     type: url-test
 
@@ -24,30 +21,22 @@ proxy-groups:
 
 rules:
 
-  # =========================
   # Gemini
-  # =========================
-  - DOMAIN,gemini.google.com,AI
-  - DOMAIN,aistudio.google.com,AI
-  - DOMAIN,generativelanguage.googleapis.com,AI
+  - DOMAIN,gemini.google.com,AI-US
+  - DOMAIN,aistudio.google.com,AI-US
+  - DOMAIN,generativelanguage.googleapis.com,AI-US
 
-  # =========================
-  # OpenAI / ChatGPT
-  # =========================
-  - DOMAIN-SUFFIX,openai.com,AI
-  - DOMAIN-SUFFIX,chatgpt.com,AI
-  - DOMAIN,ios.chat.openai.com,AI
+  # OpenAI
+  - DOMAIN-SUFFIX,openai.com,AI-US
+  - DOMAIN-SUFFIX,chatgpt.com,AI-US
+  - DOMAIN,ios.chat.openai.com,AI-US
 
-  # =========================
   # Claude
-  # =========================
-  - DOMAIN-SUFFIX,anthropic.com,AI
-  - DOMAIN-SUFFIX,claude.ai,AI
+  - DOMAIN-SUFFIX,anthropic.com,AI-US
+  - DOMAIN-SUFFIX,claude.ai,AI-US
 
-  # =========================
   # Google API
-  # =========================
-  - DOMAIN-SUFFIX,googleapis.com,AI
-  - DOMAIN-SUFFIX,gstatic.com,AI
-  - DOMAIN-SUFFIX,googleusercontent.com,AI
-  - DOMAIN-SUFFIX,google.com,AI
+  - DOMAIN-SUFFIX,googleapis.com,AI-US
+  - DOMAIN-SUFFIX,gstatic.com,AI-US
+  - DOMAIN-SUFFIX,googleusercontent.com,AI-US
+  - DOMAIN-SUFFIX,google.com,AI-US
