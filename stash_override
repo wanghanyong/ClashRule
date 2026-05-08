@@ -1,26 +1,68 @@
 proxy-groups:
-  # Gemini 专用美国节点组
-  - name: Gemini-US
-    type: select
-    include-all: true
-    filter: "(?i)US|America|United States|美国|Los|纽约|硅谷"
+
+  # =========================
+  # 美国 AI 节点池
+  # 自动测速选最快美国节点
+  # =========================
+  - name: AI-US
+    type: url-test
+
+    # 导入所有节点
+    include-all-proxies: true
+
+    # 自动筛选美国节点
+    filter: "(?i)US|America|United States|美国|Los|纽约|硅谷|San Jose|Seattle"
+
+    # 测速地址
+    url: https://cp.cloudflare.com/generate_204
+
+    # 每5分钟测速
+    interval: 300
+
+    # 延迟容差
+    tolerance: 50
+
+  # =========================
+  # AI 总策略
+  # 美国挂了自动切 Proxy
+  # =========================
+  - name: AI
+    type: fallback
+
+    proxies:
+      - AI-US
+      - Proxy
+      - DIRECT
+
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
 
 rules:
-  # Gemini 网页
-  - DOMAIN,gemini.google.com,Gemini-US
 
-  # Google AI Studio
-  - DOMAIN,aistudio.google.com,Gemini-US
+  # =========================
+  # Gemini
+  # =========================
+  - DOMAIN,gemini.google.com,AI
+  - DOMAIN,aistudio.google.com,AI
+  - DOMAIN,generativelanguage.googleapis.com,AI
 
-  # Gemini API
-  - DOMAIN,generativelanguage.googleapis.com,Gemini-US
+  # =========================
+  # OpenAI / ChatGPT
+  # =========================
+  - DOMAIN-SUFFIX,openai.com,AI
+  - DOMAIN-SUFFIX,chatgpt.com,AI
+  - DOMAIN,ios.chat.openai.com,AI
 
+  # =========================
+  # Claude
+  # =========================
+  - DOMAIN-SUFFIX,anthropic.com,AI
+  - DOMAIN-SUFFIX,claude.ai,AI
+
+  # =========================
   # Google API
-  - DOMAIN-SUFFIX,googleapis.com,Gemini-US
-
-  # Google 静态资源
-  - DOMAIN-SUFFIX,gstatic.com,Gemini-US
-  - DOMAIN-SUFFIX,googleusercontent.com,Gemini-US
-
-  # Google 主站
-  - DOMAIN-SUFFIX,google.com,Gemini-US
+  # =========================
+  - DOMAIN-SUFFIX,googleapis.com,AI
+  - DOMAIN-SUFFIX,gstatic.com,AI
+  - DOMAIN-SUFFIX,googleusercontent.com,AI
+  - DOMAIN-SUFFIX,google.com,AI
