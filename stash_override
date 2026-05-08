@@ -1,0 +1,25 @@
+proxy-groups:
+  # Gemini 专用美国节点组
+  - name: Gemini-US
+    type: select
+    filter: "(?i)US|America|United States|美国|Los|纽约|硅谷"
+
+rules:
+  # Gemini 网页
+  - DOMAIN,gemini.google.com,Gemini-US
+
+  # Google AI Studio
+  - DOMAIN,aistudio.google.com,Gemini-US
+
+  # Gemini API
+  - DOMAIN,generativelanguage.googleapis.com,Gemini-US
+
+  # Google API
+  - DOMAIN-SUFFIX,googleapis.com,Gemini-US
+
+  # Google 静态资源
+  - DOMAIN-SUFFIX,gstatic.com,Gemini-US
+  - DOMAIN-SUFFIX,googleusercontent.com,Gemini-US
+
+  # Google 主站
+  - DOMAIN-SUFFIX,google.com,Gemini-US
