@@ -14,7 +14,7 @@ proxy-groups:
     filter: "(?i)US|America|United States|美国|Los|纽约|硅谷|San Jose|Seattle"
 
     # 测速地址
-    url: https://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
 
     # 每5分钟测速
     interval: 300
