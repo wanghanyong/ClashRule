@@ -40,3 +40,11 @@ rules:
   - DOMAIN-SUFFIX,gstatic.com,AI-US
   - DOMAIN-SUFFIX,googleusercontent.com,AI-US
   - DOMAIN-SUFFIX,google.com,AI-US
+
+# Spotify
+  - DOMAIN-SUFFIX,spotify.com,AI-US
+  - DOMAIN-SUFFIX,scdn.co,AI-US
+  - DOMAIN-SUFFIX,pscdn.co,AI-US
+  - DOMAIN-KEYWORD,spotify,AI-US
+  - PROCESS-NAME,Spotify,AI-US
+  - DOMAIN-SUFFIX,spoti.fi,AI-US
